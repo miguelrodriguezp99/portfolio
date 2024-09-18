@@ -23,6 +23,19 @@ const Cursor = () => {
         cursor.classList.remove("cursor-expanded");
       });
     });
+
+    const cursorHover2 = document.querySelectorAll(".cursor-hover2");
+    cursorHover2.forEach((item) => {
+      item.addEventListener("mouseenter", () => {
+        const cursor = document.querySelector(".cursor") as HTMLElement;
+        cursor.classList.add("cursor-expanded2");
+      });
+
+      item.addEventListener("mouseleave", () => {
+        const cursor = document.querySelector(".cursor") as HTMLElement;
+        cursor.classList.remove("cursor-expanded2");
+      });
+    });
   }, []);
 
   return (

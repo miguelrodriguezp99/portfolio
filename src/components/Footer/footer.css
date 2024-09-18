@@ -1,7 +1,6 @@
-.footer {
-  position: -webkit-sticky;
-  position: sticky;
-  bottom: 0;
-  z-index: 0;
-  width: 100%;
+.footer-title {
+  font-size: calc(7.143vw + 1.071rem);
+  line-height: calc(7.143vw + 1.071rem);
+  text-transform: uppercase;
+  width: 7ch;
 }
