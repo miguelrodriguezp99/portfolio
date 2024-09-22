@@ -10,7 +10,7 @@ const Hero = () => {
   const y = useTransform(scrollY, [0, window.innerHeight], [0, -200]); // Moverá la imagen hasta -200px
 
   return (
-    <header className="grid-container bg-[#222] z-50" ref={ref}>
+    <header className="grid-container bg-[#222] z-[999]" ref={ref}>
       <h1 className="hero-title">
         {"FRONT-END DEVELOPER DRIVEN BY DESIGN"
           .split("")

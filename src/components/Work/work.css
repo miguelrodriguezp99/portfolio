@@ -33,6 +33,9 @@
 }
 
 @media (width <= 639px) {
+  .work-section-container {
+    height: 110dvh;
+  }
   .work-svg-container {
     z-index: 1;
   }

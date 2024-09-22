@@ -6,7 +6,7 @@ export default function Footer() {
         // className={`h-[568px] md:h-[350px] md:h-[350px] lg:h-[400px] w-full text-[#222] fixed left-0 bottom-0 p-6 pb-0 bg-white
         //   ${booleanValue ? "z-[999999]" : "z-[-1]"}
         //   `}
-        className={` sm:h-auto w-full bg-[#f9f9f9] text-[#222] sticky bottom-0 p-4 sm:p-6 z-[0]
+        className={`w-full bg-[#f9f9f9] text-[#222] sticky bottom-0 p-4 sm:p-6 z-[-1] sm:z-[0]
           `}
       >
         <div className="flex flex-col md:flex-row gap-2 md:h-full">

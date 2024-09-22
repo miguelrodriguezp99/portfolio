@@ -8,6 +8,9 @@ export default {
         geist: ["Geist"],
         bebas: ["Bebas"],
       },
+      aspectRatio: {
+        "1.5/1": "1.5/1",
+      },
     },
   },
   plugins: [],

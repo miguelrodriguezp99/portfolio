@@ -121,7 +121,7 @@ const Work = () => {
       <div
         ref={ref}
         // style={{ translateY: translateWork }}
-        className={`h-[215dvh] sm:h-[400dvh] relative z-50 bg-[#f9f9f9] cursor-black-color`}
+        className={`min-h-[100dvh] max-h-min sm:max-h-none sm:min-h-none sm:h-[400dvh] relative z-[9999] bg-[#f9f9f9] cursor-black-color`}
       >
         <section className="work-section-container">
           <h2>Work</h2>
@@ -146,21 +146,21 @@ const Work = () => {
             <img
               src="miracle.jpeg"
               alt="miracle ui"
-              className={`absolute rounded-[24px] max-h-[320px] w-full object-cover ${
+              className={`absolute rounded-[24px] aspect-1.5/1 sm:max-h-[320px] w-full object-cover ${
                 currentImage === 0 ? "opacity-100" : "opacity-0"
               }`}
             />
             <img
               src="keyboard.jpeg"
               alt="typing monkey"
-              className={`absolute rounded-[24px] max-h-[320px] w-full object-cover  ${
+              className={`absolute rounded-[24px] aspect-1.5/1 sm:max-h-[320px] w-full object-cover  ${
                 currentImage === 1 ? "opacity-100" : "opacity-0"
               }`}
             />
             <img
               src="bentoed.jpeg"
               alt="Image 3"
-              className={`absolute rounded-[24px] object-cover w-full max-h-[320px] ${
+              className={`absolute rounded-[24px] aspect-1.5/1 sm:max-h-[320px] w-full object-cover ${
                 currentImage === 2 ? "opacity-100" : "opacity-0"
               }`}
             />
@@ -170,14 +170,15 @@ const Work = () => {
             style={{ translateY }}
             className="hidden sm:flex absolute top-0 w-full min-h-[100vh] bg-[#222] gray-background"
           ></motion.div>
-          <motion.div
+          {/* <motion.div
             style={{ translateY: translateYMobile }}
             className="sm:hidden absolute top-0 w-full min-h-[100vh] bg-[#222] gray-background"
-          ></motion.div>
+          ></motion.div> */}
         </section>
         <MobileWorks />
 
-        <section className="works-container sticky top-0 text-[#f9f9f9] max-h-[100dvh] ">
+        {/* WORKS PC CONTAINER */}
+        <section className="hidden sm:flex works-container sticky top-0 text-[#f9f9f9] max-h-[100dvh]">
           <motion.div style={{ y }} className="hidden sm:flex works-container ">
             <a
               href="https://miracle-ui.vercel.app"

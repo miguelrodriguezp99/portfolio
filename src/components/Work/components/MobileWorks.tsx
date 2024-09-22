@@ -3,24 +3,24 @@ import "../work.css";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function MobileWorks() {
-  const ref = useRef(null);
+  // const ref = useRef(null);
 
-  const { scrollYProgress: Background } = useScroll({
-    target: ref,
-    offset: ["-20vh start", "end end"],
-  });
-  const translateY = useTransform(Background, [0, 1], ["0vh", "-360px"]);
+  // const { scrollYProgress: Background } = useScroll({
+  //   target: ref,
+  //   offset: ["-20vh start", "end end"],
+  // });
+  // const translateY = useTransform(Background, [0, 1], ["0vh", "-360px"]);
   return (
     <>
-      <motion.div
-        style={{ translateY }}
-        ref={ref}
-        className="sm:hidden mobile-works bg-[#222] "
+      <div
+        // style={{ translateY }}
+        // ref={ref}
+        className="sm:hidden mobile-works bg-[#222] relative z-50"
       >
         <div className="mobile-workitem-container">
           <a>
             <img
-              src="galaxy.jpg"
+              src="miracle.jpeg"
               alt="Miracle UI"
               className="mobile-workitem-image"
             />
@@ -48,7 +48,7 @@ export default function MobileWorks() {
         <div className="mobile-workitem-container">
           <a>
             <img
-              src="arquitectura.avif"
+              src="bentoed.jpeg"
               alt="Miracle UI"
               className="mobile-workitem-image"
             />
@@ -59,10 +59,7 @@ export default function MobileWorks() {
           </a>
           <div className="mobile-work-gradient"></div>
         </div>
-      </motion.div>
-      {/* <footer className="bg-red-100 min-h-[300px] sm:h-[350px] w-full text-black fixed bottom-0 left-0 z-[-1]">
-        <div className="">footer</div>
-      </footer> */}
+      </div>
     </>
   );
 }
