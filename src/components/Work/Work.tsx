@@ -46,11 +46,11 @@ const Work = () => {
   /* ANIMATIONS */
   const scale = useTransform(WorkTitle, [0.05, 0.2], [1.5, 1]);
   const translateY = useTransform(WorkTitle, [0.165, 0.3], ["100vh", "0vh"]);
-  const translateYMobile = useTransform(
-    WorkTitle,
-    [0.123, 0.3],
-    ["100vh", "0vh"]
-  );
+  // const translateYMobile = useTransform(
+  //   WorkTitle,
+  //   [0.123, 0.3],
+  //   ["100vh", "0vh"]
+  // );
 
   const translateTitles = useTransform(WorkTitle, [0.5, 0.55], ["0vh", "0vh"]);
 

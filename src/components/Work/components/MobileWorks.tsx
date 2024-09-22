@@ -1,6 +1,4 @@
-import { useRef } from "react";
 import "../work.css";
-import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function MobileWorks() {
   // const ref = useRef(null);
