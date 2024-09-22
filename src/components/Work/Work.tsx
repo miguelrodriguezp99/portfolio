@@ -146,21 +146,21 @@ const Work = () => {
             <img
               src="miracle.jpeg"
               alt="miracle ui"
-              className={`absolute rounded-[24px] aspect-1.5/1 sm:max-h-[320px] w-full object-cover ${
+              className={`absolute rounded-[24px] aspect-1.5/1  w-full object-cover ${
                 currentImage === 0 ? "opacity-100" : "opacity-0"
               }`}
             />
             <img
               src="keyboard.jpeg"
               alt="typing monkey"
-              className={`absolute rounded-[24px] aspect-1.5/1 sm:max-h-[320px] w-full object-cover  ${
+              className={`absolute rounded-[24px] aspect-1.5/1  w-full object-cover  ${
                 currentImage === 1 ? "opacity-100" : "opacity-0"
               }`}
             />
             <img
               src="bentoed.jpeg"
               alt="Image 3"
-              className={`absolute rounded-[24px] aspect-1.5/1 sm:max-h-[320px] w-full object-cover ${
+              className={`absolute rounded-[24px] aspect-1.5/1  w-full object-cover ${
                 currentImage === 2 ? "opacity-100" : "opacity-0"
               }`}
             />
