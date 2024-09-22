@@ -56,9 +56,9 @@ const Cursor = () => {
 
   return (
     <div
-      className="cursor fixed w-5 h-5
+      className="hidden sm:flex cursor fixed w-5 h-5
     bg-white rounded-full pointer-events-none 
-    translate-x-[-50%] translate-y-[-50%] mix-blend-difference flex items-center text-center justify-center"
+    translate-x-[-50%] translate-y-[-50%] mix-blend-difference items-center text-center justify-center"
     >
       {/* <span className="cursor-text text-black hidden leading-[6px] uppercase font-bebas font-extralight">
         {"View Project"}

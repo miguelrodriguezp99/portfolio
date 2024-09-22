@@ -5,7 +5,7 @@ export default function Navbar() {
   const location = useLocation();
 
   return (
-    <div className="z-[99999] text-[#f9f9f9] fixed top-6 left-6 right-6 mix-blend-difference flex justify-between ">
+    <div className="z-[99999] text-[#f9f9f9] fixed top-6 left-6 right-6 mix-blend-difference flex justify-between">
       <button
         className="hidden sm:flex spacing text-start bg-[#f9f9f9] 
         items-center justify-center rounded-full h-[40px] cursor-none"

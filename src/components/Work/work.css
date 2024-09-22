@@ -34,7 +34,7 @@
 
 @media (width <= 639px) {
   .work-section-container {
-    height: 110dvh;
+    height: 110vh;
   }
   .work-svg-container {
     z-index: 1;
@@ -50,7 +50,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 0;
-  /* overflow: clip; */
+  overflow: clip;
   border-radius: 12px;
   width: 80%;
   aspect-ratio: 1.6/1;
@@ -85,11 +85,11 @@
   align-items: center;
   position: relative;
   z-index: 20;
-  padding: 25dvh;
+  padding: 25vh;
   width: 100%;
   will-change: transform;
   grid-template-rows: auto;
-  row-gap: 25dvh;
+  row-gap: 25vh;
   background-color: transparent;
 }
 
@@ -117,15 +117,15 @@
   }
 
   .works-container {
-    row-gap: 30dvh;
+    row-gap: 30vh;
   }
 }
 
 @media (width <= 639px) {
   .works-container {
-    row-gap: 35dvh;
+    row-gap: 35vh;
     padding: 0;
-    padding-top: 25dvh;
+    padding-top: 25vh;
   }
   .work-item-image {
     width: 75vw;
@@ -181,15 +181,15 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-top: 20dvh;
-  padding-bottom: 20dvh;
-  gap: 10dvh;
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+  gap: 10vh;
   align-items: center;
   justify-items: center;
 }
 
 .mobile-workitem-container {
-  grid-column: content-width;
+  grid-column: -1 / 1;
   aspect-ratio: 1.5/1;
   position: relative;
   border-radius: 12px;
@@ -198,9 +198,18 @@
   display: flex;
   align-items: flex-end;
   width: 350px;
+
+  img {
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 5% cover 35%;
+  }
+}
+
+.imagen {
   animation: reveal linear both;
   animation-timeline: view();
-  animation-range: entry 5% cover 30%;
+  animation-range: entry 5% cover 35%;
 }
 
 .mobile-workitem-image {

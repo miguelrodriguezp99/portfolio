@@ -121,7 +121,7 @@ const Work = () => {
       <div
         ref={ref}
         // style={{ translateY: translateWork }}
-        className={`min-h-[100dvh] max-h-min sm:max-h-none sm:min-h-none sm:h-[400dvh] relative z-[9999] bg-[#f9f9f9] cursor-black-color`}
+        className={`min-h-[100vh] max-h-min sm:max-h-none sm:min-h-none sm:h-[400dvh] relative z-[9999] bg-[#f9f9f9] cursor-black-color`}
       >
         <section className="work-section-container">
           <h2>Work</h2>
