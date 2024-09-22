@@ -1,34 +1,31 @@
-import Cursor from "./components/Cursor/Cursor";
-import Hero from "./components/Hero/Hero";
 import { ReactLenis } from "lenis/react";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import Quote from "./components/Quote/Quote";
-import Work from "./components/Work/Work";
 import Footer from "./components/Footer/Footer";
-import { BooleanProvider } from "./context/FooterContext";
+import ScrollToTop from "./hooks/useScrollToTop";
 
 function App() {
   return (
-    <BooleanProvider>
-      <div className="bg-transparent font-jakarta">
-        <ReactLenis
-          root
-          options={{
-            lerp: 0.12,
-            touchMultiplier: 0,
-            syncTouch: false,
-          }}
-        >
-          <Navbar />
-          <Hero />
-          <Quote />
-          <Work />
-          <Footer />
-
-          <Cursor />
-        </ReactLenis>
+    <ReactLenis
+      root
+      options={{
+        lerp: 0.12,
+        touchMultiplier: 0,
+        syncTouch: false,
+      }}
+    >
+      <ScrollToTop />
+      <div className="font-jakarta z-50 min-w-full">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+        <Footer />
       </div>
-    </BooleanProvider>
+    </ReactLenis>
   );
 }
 

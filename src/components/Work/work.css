@@ -101,14 +101,20 @@
 .work-item-image {
   background-color: #222;
   aspect-ratio: 1.5/1;
-  width: 40vw;
+  min-width: 560px;
   max-width: 560px;
+  border-radius: 42px;
   /* transform: rotateX(-30deg); */
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 640px) and (max-width: 1024px) {
   .work-item-image {
-    width: 85vw;
+    min-width: 560px;
+    max-width: 560px;
+  }
+
+  .works-container {
+    row-gap: 30dvh;
   }
 }
 
@@ -148,7 +154,7 @@
   max-height: 1.4cap;
   width: 7ch;
   font-size: clamp(40px, 16.7vw, 320px);
-  line-height: 1;
+  line-height: 1.11;
   overflow-y: clip;
   position: relative; /* Importante para el posicionamiento absoluto de los spans */
 }

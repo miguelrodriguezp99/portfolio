@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         jakarta: ["Jakarta"],
         geist: ["Geist"],
+        bebas: ["Bebas"],
       },
     },
   },

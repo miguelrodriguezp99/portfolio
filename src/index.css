@@ -18,6 +18,14 @@
     font-display: swap;
     src: url(/fonts/jakarta_variable.ttf) format("truetype");
   }
+
+  @font-face {
+    font-family: "Bebas";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/BebasNeue-Regular.ttf) format("truetype");
+  }
 }
 
 * {
@@ -35,15 +43,29 @@
 .cursor-expanded {
   transition: transform 0.2s;
   transform: translate(-50%, -50%) scale(4);
-  /* background-color: black; */
-  /* box-shadow: 0 0 0 100vh #ddd; */
 }
 
 .cursor-expanded2 {
   transition: transform 0.2s;
   transform: translate(-50%, -50%) scale(2);
-  /* background-color: black; */
-  /* box-shadow: 0 0 0 100vh #ddd; */
+}
+
+.cursor-expanded-project {
+  transition: transform 0.35s;
+  transform: translate(-50%, -50%) scale(5);
+  background-color: #f9f9f9;
+  mix-blend-mode: normal;
+}
+
+.cursor .cursor-text {
+  display: none;
+  font-size: 6px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.cursor-expanded-project .cursor-text {
+  display: block;
 }
 
 .spacing {
@@ -51,6 +73,32 @@
 }
 
 .svg {
-  position: relative; /* O absolute/fixed */
-  z-index: 99999 !important; /* Asegúrate de que este valor sea mayor que el fondo naranja */
+  position: relative;
+  z-index: 99999 !important;
+}
+
+.about-button:hover .button-circle {
+  animation: grow 0.35s ease-in both;
+}
+
+.about-text {
+  position: relative;
+}
+
+.about-button:hover .about-text {
+  color: #f9f9f9;
+  transition: color 0.35s ease, transform 0.5s ease 0.35s;
+  transform: translateX(-0.5rem);
+}
+
+@keyframes grow {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  100% {
+    height: 102%;
+    width: 102%;
+    left: -1%;
+  }
 }

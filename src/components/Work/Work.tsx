@@ -2,58 +2,27 @@ import { motion, useAnimation, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import "./work.css";
 import MobileWorks from "./components/MobileWorks";
-import { useBooleanContext } from "../../context/FooterContext";
 
 const Work = () => {
   const ref = useRef(null);
-  const { setBooleanValue } = useBooleanContext();
   const { scrollYProgress: WorkTitle } = useScroll({
     target: ref,
     offset: ["-100vh start", "700vh end"],
   });
 
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
-  const [backgroundOn, setBackgroundOn] = useState(true);
-  const [scrollThreshold, setScrollThreshold] = useState(0.55);
 
   useEffect(() => {
     const handleResize = () => {
       setViewportHeight(window.innerHeight);
 
-      if (window.innerWidth <= 640) {
-        setScrollThreshold(0.381);
-      } else {
-        setScrollThreshold(0.55);
-      }
+      window.addEventListener("resize", handleResize);
     };
-
-    window.addEventListener("resize", handleResize);
     handleResize();
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  useEffect(() => {
-    const updateBackgroundState = (latestScrollProgress: number) => {
-      if (latestScrollProgress >= 0.5) {
-        setBackgroundOn(false);
-      } else {
-        setBackgroundOn(true);
-      }
-
-      if (latestScrollProgress >= scrollThreshold) {
-        setBooleanValue(true);
-      } else {
-        setBooleanValue(false);
-      }
-    };
-
-    const unsubscribe = WorkTitle.on("change", updateBackgroundState);
-    return () => {
-      unsubscribe();
-    };
-  }, [WorkTitle, scrollThreshold, setBooleanValue]);
 
   /* ------------------------------- */
   const [scrollTrigger1, setScrollTrigger1] = useState(0);
@@ -76,23 +45,14 @@ const Work = () => {
 
   /* ANIMATIONS */
   const scale = useTransform(WorkTitle, [0.05, 0.2], [1.5, 1]);
-  const translateY = useTransform(
-    WorkTitle,
-    [0.165, 0.3, 0.5, 0.55],
-    ["100vh", "0vh", "0vh", "-400px"]
-  );
-
+  const translateY = useTransform(WorkTitle, [0.165, 0.3], ["100vh", "0vh"]);
   const translateYMobile = useTransform(
     WorkTitle,
-    [0.123, 0.3, 0.5, 0.55],
-    ["100vh", "0vh", "0vh", "-400px"]
+    [0.123, 0.3],
+    ["100vh", "0vh"]
   );
 
-  const translateTitles = useTransform(
-    WorkTitle,
-    [0.5, 0.55],
-    ["0vh", "-350px"]
-  );
+  const translateTitles = useTransform(WorkTitle, [0.5, 0.55], ["0vh", "0vh"]);
 
   const opacity = useTransform(WorkTitle, [0.2, 0.3], [1, 0.4]);
   const filter = useTransform(WorkTitle, (v) => {
@@ -102,10 +62,12 @@ const Work = () => {
   });
 
   const randomImageOpacity = useTransform(WorkTitle, [0.4, 0.45], [1, 0]);
-  const rotateX1 = useTransform(WorkTitle, [0.2, 0.42], ["50deg", "-50deg"]);
-  const rotateX2 = useTransform(WorkTitle, [0.3, 0.51], ["50deg", "-50deg"]);
-  const rotateX3 = useTransform(WorkTitle, [0.4, 0.6], ["50deg", "-50deg"]);
-  const y = useTransform(WorkTitle, [0.285, 0.861], [0, -viewportHeight * 4]);
+  const rotateX1 = useTransform(WorkTitle, [0.2, 0.435], ["50deg", "-50deg"]);
+  const rotateX2 = useTransform(WorkTitle, [0.3, 0.55], ["50deg", "-50deg"]);
+  const rotateX3 = useTransform(WorkTitle, [0.4, 0.64], ["50deg", "-40deg"]);
+  // const y = useTransform(WorkTitle, [0.285, 0.861], [0, -viewportHeight * 3.5]);
+  const y = useTransform(WorkTitle, [0.285, 0.57], [0, -viewportHeight * 1.8]);
+
   const controls = useAnimation();
   const { scrollY } = useScroll();
 
@@ -158,9 +120,8 @@ const Work = () => {
     <>
       <div
         ref={ref}
-        className={`h-[200dvh] sm:h-[400dvh] ${
-          backgroundOn ? "bg-white" : "bg-transparent cursor-black-color"
-        }`}
+        // style={{ translateY: translateWork }}
+        className={`h-[210dvh] sm:h-[400dvh] relative z-50 bg-[#f9f9f9] cursor-black-color`}
       >
         <section className="work-section-container">
           <h2>Work</h2>
@@ -183,23 +144,23 @@ const Work = () => {
             }}
           >
             <img
-              src="galaxy.jpg"
+              src="miracle.jpeg"
               alt="miracle ui"
-              className={`absolute rounded-[24px] ${
+              className={`absolute rounded-[24px] max-h-[320px] w-full object-cover ${
                 currentImage === 0 ? "opacity-100" : "opacity-0"
               }`}
             />
             <img
               src="keyboard.jpeg"
               alt="typing monkey"
-              className={`absolute rounded-[24px] ${
+              className={`absolute rounded-[24px] max-h-[320px] w-full object-cover  ${
                 currentImage === 1 ? "opacity-100" : "opacity-0"
               }`}
             />
             <img
-              src="arquitectura.avif"
+              src="bentoed.jpeg"
               alt="Image 3"
-              className={`absolute rounded-[24px] ${
+              className={`absolute rounded-[24px] object-cover w-full max-h-[320px] ${
                 currentImage === 2 ? "opacity-100" : "opacity-0"
               }`}
             />
@@ -216,22 +177,32 @@ const Work = () => {
         </section>
         <MobileWorks />
 
-        <section className="works-container sticky top-0 text-white max-h-[100dvh]">
-          <motion.div style={{ y }} className="hidden sm:flex works-container">
-            <a href="" className="work-item-link">
+        <section className="works-container sticky top-0 text-[#f9f9f9] max-h-[100dvh] ">
+          <motion.div style={{ y }} className="hidden sm:flex works-container ">
+            <a
+              href="https://miracle-ui.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="work-item-link"
+            >
               <div className="persp relative">
                 <motion.img
                   ref={imgRef1}
                   style={{
                     rotateX: rotateX1,
                   }}
-                  src="galaxy.jpg"
+                  src="miracle.jpeg"
                   alt="Miracle UI"
-                  className="work-item-image rounded-3xl z-image"
+                  className="work-item-image object-cover cursor-hover-project"
                 />
               </div>
             </a>
-            <a href="" className="work-item-link">
+            <a
+              href="https://typing-web.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="work-item-link"
+            >
               <div className="persp">
                 <motion.img
                   ref={imgRef2}
@@ -241,20 +212,25 @@ const Work = () => {
                   }}
                   src="keyboard.jpeg"
                   alt="Miracle UI"
-                  className="work-item-image rounded-3xl z-image2"
+                  className="work-item-image object-cover cursor-hover-project"
                 />
               </div>
             </a>
-            <a href="" className="work-item-link">
+            <a
+              href="https://bentoed.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="work-item-link"
+            >
               <div className="persp">
                 <motion.img
                   ref={imgRef3}
                   style={{
                     rotateX: rotateX3,
                   }}
-                  src="arquitectura.avif"
+                  src="bentoed.jpeg"
                   alt="Miracle UI"
-                  className="work-item-image rounded-3xl z-image2"
+                  className="work-item-image object-cover cursor-hover-project"
                 />
               </div>
             </a>
@@ -270,8 +246,8 @@ const Work = () => {
               <div className="work-titles-container">
                 <motion.h2 animate={controls} className="flex flex-col">
                   <span>MIRACLE</span>
-                  <span>DESIGN</span>
-                  <span>ZARA</span>
+                  <span>RTP/99</span>
+                  <span>BENTOED</span>
                 </motion.h2>
               </div>
             </div>
