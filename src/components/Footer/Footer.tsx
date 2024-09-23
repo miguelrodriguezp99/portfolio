@@ -15,31 +15,33 @@ export default function Footer() {
             className="rounded-[24px] md:w-[45%] min-w-[330px] md:min-h-full md:min-w-[350px] aspect-[1.3/1] object-cover"
           />
           <div className="flex flex-col md:flex-col lg:w-full mt-2 sm:mt-0">
-            <div className="mb-3 flex relative  min-w-full md:min-w-fit md:w-fit lg:items-center lg:justify-center lg:h-full">
-              <h1 className="footer-title md:w-full lg:w-[8.5ch] xl:w-[8.5ch]">
-                Lets connect
-              </h1>
+            <div className="mb-3 flex relative min-w-full md:min-w-fit xl:w-fit lg:items-center lg:justify-center lg:h-full">
+              <div className="relative w-full">
+                <h2 className="footer-title md:w-full lg:w-[8.5ch] xl:w-[8.5ch]">
+                  Lets connect
+                </h2>
 
-              <a
-                href="mailto:miguelrodriguez.p99@gmail.com"
-                className="absolute flex right-0 lg:right-[30%] xl:bottom-0 xl:right-0 sm:p-3 "
-              >
-                <button
-                  className="flex sm:flex spacing text-start bg-[#222] 
+                <a
+                  href="mailto:miguelrodriguez.p99@gmail.com"
+                  className="absolute right-0 top-0 lg:top-auto flex lg:bottom-0 lg:right-[-20px] sm:p-3 "
+                >
+                  <button
+                    className="flex sm:flex spacing text-start bg-[#222] 
                   items-center justify-center rounded-full h-[35px] sm:h-[40px] 
                   cursor-none gap-3 px-2 relative about-button"
-                >
-                  <p className="h-[6px] w-[6px] rounded-full bg-transparent"></p>
-                  <p
-                    className="min-h-[7px] min-w-[7px] absolute left-[10%] bg-[#d6d6d6] rounded-full
+                  >
+                    <p className="h-[6px] w-[6px] rounded-full bg-transparent"></p>
+                    <p
+                      className="min-h-[7px] min-w-[7px] absolute left-[10%] bg-[#d6d6d6] rounded-full
                  button-circle"
-                  ></p>
+                    ></p>
 
-                  <p className="text-[#d6d6d6] text-sm about-text-footer">
-                    GET IN TOUCH
-                  </p>
-                </button>
-              </a>
+                    <p className="text-[#d6d6d6] text-sm about-text-footer">
+                      GET IN TOUCH
+                    </p>
+                  </button>
+                </a>
+              </div>
             </div>
             <div className="flex flex-col mt-3 sm:mt-0 mb-16 sm:mb-0 lg:flex-row gap-1 lg:gap-3 lg:ml-3 md:text-xl lg:text-2xl ">
               <a
