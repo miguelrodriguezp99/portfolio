@@ -56,7 +56,7 @@ const Cursor = () => {
 
   return (
     <div
-      className="hidden sm:flex cursor fixed w-5 h-5
+      className="sm:flex cursor fixed w-5 h-5
     bg-white rounded-full pointer-events-none 
     translate-x-[-50%] translate-y-[-50%] mix-blend-difference items-center text-center justify-center"
     >

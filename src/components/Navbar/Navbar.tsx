@@ -5,7 +5,7 @@ export default function Navbar() {
   const location = useLocation();
 
   return (
-    <div className="z-[99999] text-[#f9f9f9] fixed top-6 left-6 right-6 mix-blend-difference flex justify-between">
+    <div className="z-[99999] text-[#f9f9f9] fixed top-6 left-6 right-6 mix-blend-difference flex justify-between items-center">
       <button
         className="hidden sm:flex spacing text-start bg-[#f9f9f9] 
         items-center justify-center rounded-full h-[40px] cursor-none"
@@ -21,7 +21,7 @@ export default function Navbar() {
           }, 100);
           return;
         }}
-        className="spacing text-2xl font-bold cursor-hover2"
+        className="spacing text-[14px] sm:text-2xl font-bold cursor-hover2 "
       >
         {"{ Miguel Rodríguez }"}
       </h1>
@@ -33,13 +33,13 @@ export default function Navbar() {
           }, 100);
           return;
         }}
-        className="hidden sm:flex spacing text-start bg-[#f9f9f9] 
-        items-center justify-center rounded-full h-[40px] 
+        className="flex sm:flex spacing text-start bg-[#f9f9f9] 
+        items-center justify-center rounded-full h-[35px] sm:h-[40px] 
         cursor-none gap-2 px-4 relative about-button"
       >
         <p className="h-[6px] w-[6px] rounded-full bg-transparent"></p>
         <p
-          className="min-h-[7px] min-w-[7px] absolute left-[13.5%] bg-[#222] rounded-full
+          className="min-h-[7px] min-w-[7px] absolute left-[13.5%]  bg-[#222] rounded-full
          button-circle"
         ></p>
 

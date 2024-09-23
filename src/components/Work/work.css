@@ -57,6 +57,16 @@
   z-index: 0;
 }
 
+@media (width <= 450px) {
+  .work-section-container .work-image-container {
+    transform: translate(-50%, -70%);
+  }
+
+  .work-svg-container {
+    margin-bottom: 10vh;
+  }
+}
+
 @media (min-width: 768px) {
   .work-section-container .work-image-container {
     border-radius: 24px;

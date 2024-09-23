@@ -17,7 +17,7 @@ function App() {
       }}
     >
       <ScrollToTop />
-      <div className="font-jakarta z-50 min-w-full">
+      <div className="font-jakarta min-w-full relative z-[-2]">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

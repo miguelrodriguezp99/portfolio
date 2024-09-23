@@ -12,9 +12,9 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row gap-2 md:h-full">
           <img
             src="./miguel.png"
-            className="rounded-[24px] md:w-[45%] min-w-[330px] md:min-h-full  md:min-w-[350px] object-cover"
+            className="rounded-[24px] md:w-[45%] min-w-[330px] md:min-h-full md:min-w-[350px] aspect-[1.3/1] object-cover"
           />
-          <div className="flex flex-col md:flex-col lg:w-full">
+          <div className="flex flex-col md:flex-col lg:w-full mt-2 sm:mt-0">
             <div className="mb-3 flex relative min-w-full md:min-w-fit md:w-fit">
               <h1 className="footer-title md:w-full lg:w-[8.5ch] xl:w-[8.5ch]">
                 Lets connect
@@ -23,7 +23,7 @@ export default function Footer() {
                 GET IN TOUCH
               </button>
             </div>
-            <div className="flex flex-col lg:flex-row gap-1 lg:gap-3 lg:ml-3 md:text-xl lg:text-2xl">
+            <div className="flex flex-col mt-3 sm:mt-0 mb-16 sm:mb-0 lg:flex-row gap-1 lg:gap-3 lg:ml-3 md:text-xl lg:text-2xl">
               <a
                 href="#"
                 className="footer-link cursor-hover2 hover:text-[#6d6d6d] transition-colors duration-300 w-fit cursor-hover2"

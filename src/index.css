@@ -28,6 +28,16 @@
   }
 }
 
+#root {
+  position: relative;
+  z-index: -2;
+}
+
+body {
+  position: relative;
+  z-index: -2;
+}
+
 * {
   margin: 0;
   padding: 0;
