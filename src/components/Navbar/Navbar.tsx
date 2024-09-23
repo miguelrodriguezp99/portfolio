@@ -25,6 +25,15 @@ export default function Navbar() {
       >
         {"{ Miguel Rodríguez }"}
       </h1>
+
+      {/* <button className="button-button">
+        <div className="button-dot"></div>
+        <span>
+          <span>ABOUT ME</span>
+          <span>ABOUT ME</span>
+        </span>
+      </button> */}
+
       <button
         onClick={() => {
           setTimeout(() => {

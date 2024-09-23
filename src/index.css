@@ -101,6 +101,12 @@ body {
   transform: translateX(-0.5rem);
 }
 
+.about-button:hover .about-text-footer {
+  color: #222;
+  transition: color 0.35s ease, transform 0.5s ease 0.35s;
+  transform: translateX(-0.5rem);
+}
+
 @keyframes grow {
   0% {
     height: 0;
@@ -111,4 +117,77 @@ body {
     width: 102%;
     left: -1%;
   }
+}
+
+.button-button {
+  display: flex;
+  align-items: center;
+  height: 38px;
+  padding: 0 14px;
+  font-size: 14px;
+  border: none;
+  text-transform: uppercase;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  vertical-align: baseline;
+  background: #222;
+  color: #d6d6d6;
+  border-radius: 25px;
+  cursor: none;
+}
+
+.button-button .button-dot {
+  width: 5px;
+  height: 5px;
+  background-color: #d6d6d6;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.button-button .button-text {
+  display: flex;
+  height: 1.5ch;
+  gap: 0px;
+  flex-direction: column;
+  line-height: 1;
+  overflow-y: hidden;
+}
+
+.button-button .button-text .first-child,
+.button-button .button-text .second-child {
+  transition: transform 0.25s linear;
+}
+
+/* Estado inicial sin hover */
+.button-button .button-text .first-child {
+  transform: translateY(0);
+}
+
+.button-button .button-text .second-child {
+  transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+  .button-button {
+    padding: 0 16px;
+    height: 45px;
+  }
+}
+
+.button-button:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s linear;
+}
+
+/* Animación cuando está en hover */
+.button-button:hover .button-text .first-child {
+  transform: translateY(-100%);
+}
+
+.button-button:hover .button-text .second-child {
+  transform: translateY(-100%);
+}
+.button-button:hover .secc {
+  transform: translateY(0%);
 }

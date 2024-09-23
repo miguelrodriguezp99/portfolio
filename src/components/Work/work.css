@@ -169,7 +169,7 @@
   font-size: clamp(40px, 16.7vw, 320px);
   line-height: 1.11;
   overflow-y: clip;
-  position: relative; /* Importante para el posicionamiento absoluto de los spans */
+  position: relative;
 }
 
 .work-titles-container h2 {
