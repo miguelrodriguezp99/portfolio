@@ -1,5 +1,5 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 export default function MobileWorks() {
   // Referencias para cada imagen
@@ -10,19 +10,19 @@ export default function MobileWorks() {
   // Hook para el primer item
   const { scrollYProgress: scrollYProgress1 } = useScroll({
     target: ref1,
-    offset: ["start end", "end start"], // Cambiar el offset aquí afectará cuándo se activa
+    offset: ['start end', 'end start'], // Cambiar el offset aquí afectará cuándo se activa
   });
 
   // Hook para el segundo item
   const { scrollYProgress: scrollYProgress2 } = useScroll({
     target: ref2,
-    offset: ["start end", "end start"], // Ajustar para el segundo
+    offset: ['start end', 'end start'], // Ajustar para el segundo
   });
 
   // Hook para el tercer item
   const { scrollYProgress: scrollYProgress3 } = useScroll({
     target: ref3,
-    offset: ["start end", "end start"], // Ajustar para el tercero
+    offset: ['start end', 'end start'], // Ajustar para el tercero
   });
 
   // Transformaciones para el primer item
@@ -45,7 +45,11 @@ export default function MobileWorks() {
         ref={ref1}
         style={{ scale: scale1, opacity: opacity1 }}
       >
-        <a>
+        <a
+          href="https://miracle-ui.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img
             src="miracle.jpeg"
             alt="Miracle UI"
@@ -65,7 +69,11 @@ export default function MobileWorks() {
         ref={ref2}
         style={{ scale: scale2, opacity: opacity2 }}
       >
-        <a>
+        <a
+          href="https://typing-web.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img
             src="keyboard.jpeg"
             alt="Keyboard UI"
@@ -85,7 +93,11 @@ export default function MobileWorks() {
         ref={ref3}
         style={{ scale: scale3, opacity: opacity3 }}
       >
-        <a>
+        <a
+          href="https://bentoed.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img
             src="bentoed.jpeg"
             alt="Bento UI"
