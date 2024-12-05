@@ -45,7 +45,7 @@ export default function Footer() {
             </div>
             <div className="flex flex-col mt-3 sm:mt-0 mb-16 sm:mb-0 lg:flex-row gap-1 lg:gap-3 lg:ml-3 md:text-xl lg:text-2xl ">
               <a
-                href="www.instagram.com"
+                href="https://www.instagram.com"
                 target="_blank"
                 rel="noreferrer"
                 className="footer-link cursor-hover2 hover:text-[#6d6d6d] transition-colors duration-300 w-fit cursor-hover2"
@@ -53,7 +53,7 @@ export default function Footer() {
                 Instagram
               </a>
               <a
-                href="www.twitter.com"
+                href="https://www.twitter.com"
                 target="_blank"
                 rel="noreferrer"
                 className="footer-link cursor-hover2 hover:text-[#6d6d6d] transition-colors duration-300 w-fit cursor-hover2"
@@ -61,7 +61,7 @@ export default function Footer() {
                 Twitter
               </a>
               <a
-                href="www.linkedin.com/in/miguel-rodríguez-pérez-45598b1b7"
+                href="https://www.linkedin.com/in/miguel-rodríguez-pérez-45598b1b7"
                 target="_blank"
                 rel="noreferrer"
                 className="footer-link cursor-hover2 hover:text-[#6d6d6d] transition-colors duration-300 w-fit cursor-hover2"
