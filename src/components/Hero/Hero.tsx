@@ -1,6 +1,6 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
-import "./hero.css";
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
+import './hero.css';
 
 const Hero = () => {
   const ref = useRef(null);
@@ -12,8 +12,8 @@ const Hero = () => {
   return (
     <header className="grid-container bg-[#222] z-[999]" ref={ref}>
       <h1 className="hero-title">
-        {"FRONT-END DEVELOPER DRIVEN BY DESIGN"
-          .split("")
+        {'FRONT-END DEVELOPER DRIVEN BY DESIGN'
+          .split('')
           .map((letter, index) => (
             <span key={index} className="cursor-hover">
               {letter}
@@ -42,6 +42,7 @@ const Hero = () => {
             src="https://images.unsplash.com/photo-1687904364304-3fa792cdb55a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           /> */}
           <img className="hero-image" src="./miguel.png" />
+          {/* <img className="hero-image" src="./profile.jpg" /> */}
         </div>
       </motion.div>
 

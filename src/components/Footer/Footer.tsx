@@ -1,4 +1,4 @@
-import "./footer.css";
+import './footer.css';
 export default function Footer() {
   return (
     <>
@@ -45,19 +45,25 @@ export default function Footer() {
             </div>
             <div className="flex flex-col mt-3 sm:mt-0 mb-16 sm:mb-0 lg:flex-row gap-1 lg:gap-3 lg:ml-3 md:text-xl lg:text-2xl ">
               <a
-                href="#"
+                href="www.instagram.com"
+                target="_blank"
+                rel="noreferrer"
                 className="footer-link cursor-hover2 hover:text-[#6d6d6d] transition-colors duration-300 w-fit cursor-hover2"
               >
                 Instagram
               </a>
               <a
                 href="www.twitter.com"
+                target="_blank"
+                rel="noreferrer"
                 className="footer-link cursor-hover2 hover:text-[#6d6d6d] transition-colors duration-300 w-fit cursor-hover2"
               >
                 Twitter
               </a>
               <a
-                href="#"
+                href="www.linkedin.com/in/miguel-rodríguez-pérez-45598b1b7"
+                target="_blank"
+                rel="noreferrer"
                 className="footer-link cursor-hover2 hover:text-[#6d6d6d] transition-colors duration-300 w-fit cursor-hover2"
               >
                 LinkedIn

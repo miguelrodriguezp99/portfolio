@@ -1,8 +1,8 @@
-import { useRef, useEffect, useState } from "react";
-import { useInView } from "framer-motion";
-import "./about.css";
-import galaxy from "../../assets/galaxy.jpg";
-import keyboard from "../../assets/keyboard.jpeg";
+import { useRef, useEffect, useState } from 'react';
+import { useInView } from 'framer-motion';
+import './about.css';
+import galaxy from '../../assets/galaxy.jpg';
+import keyboard from '../../assets/keyboard.jpeg';
 
 export default function AboutContent() {
   const dividerRef = useRef(null);
@@ -25,26 +25,26 @@ export default function AboutContent() {
   const list = [
     {
       img: galaxy,
-      title: "Frontent development internship at Inditex",
-      date: "2024 - now",
+      title: 'Web Architect at Inditex',
+      date: '2024 - now',
       // backgroundPosition: bgPosition.p1,
     },
     {
       img: keyboard,
-      title: "Computer engineering at the University of Coruña",
-      date: "2019 - 2025",
+      title: 'Computer engineering at the University of Coruña',
+      date: '2019 - now',
       // backgroundPosition: bgPosition.p2,
     },
     {
       img: galaxy,
-      title: "Backend development internship at Oesia",
-      date: "2019 -2019",
+      title: 'Backend development internship at Oesia',
+      date: '2019 -2019',
       // backgroundPosition: bgPosition.p3,
     },
     {
       img: keyboard,
-      title: "Multi-Platform Application development",
-      date: "2017 - 2019",
+      title: 'Multi-Platform Application development',
+      date: '2017 - 2019',
       // backgroundPosition: bgPosition.p4,
     },
   ];
@@ -66,12 +66,12 @@ export default function AboutContent() {
   // };
 
   const dividerAnimation = useInView(dividerRef, {
-    margin: "-300px 0px 0px 0px",
+    margin: '-300px 0px 0px 0px',
     once: true,
   });
 
   const isFirstDividerInView = useInView(firstDividerRef, {
-    margin: "-300px 0px 0px 0px",
+    margin: '-300px 0px 0px 0px',
     once: true,
   });
 
@@ -86,7 +86,7 @@ export default function AboutContent() {
       <div
         ref={dividerRef}
         className={`min-h-[1px] bg-[#f9f9f993] md:col-start-2 md:col-end-12 col-start-1 col-end-13 divider ${
-          dividerAnimation ? "animate-divider delay-0" : ""
+          dividerAnimation ? 'animate-divider delay-0' : ''
         }`}
       ></div>
       <div className="md:col-start-2 md:col-end-12 col-start-1 col-end-13 flex flex-col lg:flex-row lg:leading-[50px] py-[80px] about-animation">
@@ -136,7 +136,7 @@ export default function AboutContent() {
                     <div
                       ref={firstDividerRef}
                       className={`min-h-[1px] bg-[#f9f9f993] md:col-start-2 md:col-end-12 col-start-1 col-end-13 divider  ${
-                        shouldAnimate ? "animate-divider delay-0" : ""
+                        shouldAnimate ? 'animate-divider delay-0' : ''
                       }`}
                     ></div>
                     <li className="py-3 flex flex-col">
