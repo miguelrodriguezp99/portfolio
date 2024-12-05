@@ -150,86 +150,8 @@ export default function AboutContent() {
               );
             })}
           </ul>
-          {/* <motion.div
-            className="hovered_img"
-            style={
-              {
-                // // backgroundPosition: img.backgroundPosition,
-                // y: imagePos.y,
-                // x: imagePos.x,
-                // opacity: img.opacity,
-              }
-            }
-          /> */}
         </div>
       </div>
     </main>
   );
 }
-
-/* 
-
-const projects = document.querySelector("projects");
-const prewiew = document.querySelector("preview");
-const previewImg = document.querySelector("preview-img");
-
-let isInside = false;
-
-const bgPosition = {
-    p1 : "0 0",
-    p2 : "0 33%",
-    p3 : "0 66%",
-    p4 : "0 100%"
-};
-
-const moveStuff = (e) => {
-    const mouseInside isMouseInsideContainer(e);
-
-    if (mouseInside !== isInside) {
-        isInside = mouseInside;
-        if (isInside) {
-            gsap.to(preview, 0.3, {
-            scale: 1,
-            });
-        } else {
-        gsap.to(preview, 0.3, {
-            scale: 0,
-            });
-        }
-    }
-};
-
-const moveProject = (e) => {
-    const preview = preview.getBoundingClientRect();
-    const offsetX = previewRect.width  / 2;
-    const offsetY = previewRect.height / 2;
-
-    preview.style.left = e.pageX - offsetX + "px";
-    preview.style.top = e.pageY - offsetY + "px";
-}
-
-const moveProjectImg = (project) => {
-    const projectId = project.id;
-    gsap.to(previewImg, 0.4, {
-        backgroundPosition: bgPosition[projectId] || "0 0",
-    });
-}
-
-const isMouseInsideContainer = (e) => {
-    const previewRect = preview.getBoundingClientRect();
-    return (
-        e.pageX >= previewRect.left && 
-        e.pageX <= previewRect.right && 
-        e.pageY >= previewRect.top && 
-        e.pageY <= previewRect.bottom
-    );
-}
-
-window.addEventListener("mousemove", moveStuff);
-
-Array.from(projects.children).forEach((project) => {
-    project.addEventListener("mousemove", moveProject);
-    project.addEventListener("mousemove", moveProjectImg.bind(null, project));
-}
-
-*/

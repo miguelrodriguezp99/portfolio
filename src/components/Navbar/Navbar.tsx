@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -17,27 +17,19 @@ export default function Navbar() {
       <h1
         onClick={() => {
           setTimeout(() => {
-            navigate("/");
+            navigate('/');
           }, 100);
           return;
         }}
         className="spacing text-[14px] sm:text-2xl font-bold cursor-hover2 "
       >
-        {"{ Miguel Rodríguez }"}
+        {'{ Miguel Rodríguez }'}
       </h1>
-
-      {/* <button className="button-button">
-        <div className="button-dot"></div>
-        <span>
-          <span>ABOUT ME</span>
-          <span>ABOUT ME</span>
-        </span>
-      </button> */}
 
       <button
         onClick={() => {
           setTimeout(() => {
-            const route = location.pathname === "/about" ? "/" : "/about";
+            const route = location.pathname === '/about' ? '/' : '/about';
             navigate(route);
           }, 100);
           return;
@@ -53,7 +45,7 @@ export default function Navbar() {
         ></p>
 
         <p className="text-[#222] text-sm about-text">
-          {location.pathname === "/about" ? "WORK" : "ABOUT ME"}
+          {location.pathname === '/about' ? 'WORK' : 'ABOUT ME'}
         </p>
       </button>
     </div>

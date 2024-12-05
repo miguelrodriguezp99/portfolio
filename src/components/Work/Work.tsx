@@ -1,13 +1,13 @@
-import { motion, useAnimation, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-import "./work.css";
-import MobileWorks from "./components/MobileWorks";
+import { motion, useAnimation, useScroll, useTransform } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import './work.css';
+import MobileWorks from './components/MobileWorks';
 
 const Work = () => {
   const ref = useRef(null);
   const { scrollYProgress: WorkTitle } = useScroll({
     target: ref,
-    offset: ["-100vh start", "700vh end"],
+    offset: ['-100vh start', '700vh end'],
   });
 
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
@@ -16,25 +16,21 @@ const Work = () => {
     const handleResize = () => {
       setViewportHeight(window.innerHeight);
 
-      window.addEventListener("resize", handleResize);
+      window.addEventListener('resize', handleResize);
     };
     handleResize();
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
-  /* ------------------------------- */
   const [scrollTrigger1, setScrollTrigger1] = useState(0);
   const [scrollTrigger2, setScrollTrigger2] = useState(0);
   const imgRef1 = useRef<HTMLImageElement>(null);
   const imgRef2 = useRef<HTMLImageElement>(null);
   const imgRef3 = useRef<HTMLImageElement>(null);
-  /* ------------------------------- */
-
   const [currentImage, setCurrentImage] = useState(0);
 
-  /* RANDOM IMAGE SLIDER */
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % 3);
@@ -45,14 +41,9 @@ const Work = () => {
 
   /* ANIMATIONS */
   const scale = useTransform(WorkTitle, [0.05, 0.2], [1.5, 1]);
-  const translateY = useTransform(WorkTitle, [0.165, 0.3], ["100vh", "0vh"]);
-  // const translateYMobile = useTransform(
-  //   WorkTitle,
-  //   [0.123, 0.3],
-  //   ["100vh", "0vh"]
-  // );
+  const translateY = useTransform(WorkTitle, [0.165, 0.3], ['100vh', '0vh']);
 
-  const translateTitles = useTransform(WorkTitle, [0.5, 0.55], ["0vh", "0vh"]);
+  const translateTitles = useTransform(WorkTitle, [0.5, 0.55], ['0vh', '0vh']);
 
   const opacity = useTransform(WorkTitle, [0.2, 0.3], [1, 0.4]);
   const filter = useTransform(WorkTitle, (v) => {
@@ -62,9 +53,9 @@ const Work = () => {
   });
 
   const randomImageOpacity = useTransform(WorkTitle, [0.4, 0.45], [1, 0]);
-  const rotateX1 = useTransform(WorkTitle, [0.2, 0.435], ["50deg", "-50deg"]);
-  const rotateX2 = useTransform(WorkTitle, [0.3, 0.55], ["50deg", "-50deg"]);
-  const rotateX3 = useTransform(WorkTitle, [0.4, 0.64], ["50deg", "-40deg"]);
+  const rotateX1 = useTransform(WorkTitle, [0.2, 0.435], ['50deg', '-50deg']);
+  const rotateX2 = useTransform(WorkTitle, [0.3, 0.55], ['50deg', '-50deg']);
+  const rotateX3 = useTransform(WorkTitle, [0.4, 0.64], ['50deg', '-40deg']);
   // const y = useTransform(WorkTitle, [0.285, 0.861], [0, -viewportHeight * 3.5]);
   const y = useTransform(WorkTitle, [0.285, 0.57], [0, -viewportHeight * 1.8]);
 
@@ -83,9 +74,9 @@ const Work = () => {
     };
 
     updateScrollTriggers();
-    window.addEventListener("resize", updateScrollTriggers);
+    window.addEventListener('resize', updateScrollTriggers);
     return () => {
-      window.removeEventListener("resize", updateScrollTriggers);
+      window.removeEventListener('resize', updateScrollTriggers);
     };
   }, [viewportHeight]);
   /* ------------------------------- */
@@ -96,17 +87,17 @@ const Work = () => {
 
       if (scrollTop >= scrollTrigger1 && scrollTop < scrollTrigger2) {
         controls.start({
-          translateY: "-33%",
+          translateY: '-33%',
           transition: { duration: 0.25 },
         });
       } else if (scrollTop >= scrollTrigger2) {
         controls.start({
-          translateY: "-66%",
+          translateY: '-66%',
           transition: { duration: 0.25 },
         });
       } else {
         controls.start({
-          translateY: "0%",
+          translateY: '0%',
           transition: { duration: 0.25 },
         });
       }
@@ -120,7 +111,6 @@ const Work = () => {
     <>
       <div
         ref={ref}
-        // style={{ translateY: translateWork }}
         className={`min-h-[100vh] max-h-min sm:max-h-none sm:min-h-none sm:h-[400dvh] relative z-[9999] bg-[#f9f9f9] cursor-black-color`}
       >
         <section className="work-section-container ">
@@ -147,21 +137,21 @@ const Work = () => {
               src="miracle.jpeg"
               alt="miracle ui"
               className={`absolute rounded-[24px] aspect-1.5/1  w-full object-cover ${
-                currentImage === 0 ? "opacity-100" : "opacity-0"
+                currentImage === 0 ? 'opacity-100' : 'opacity-0'
               }`}
             />
             <img
               src="keyboard.jpeg"
               alt="typing monkey"
               className={`absolute rounded-[24px] aspect-1.5/1  w-full object-cover  ${
-                currentImage === 1 ? "opacity-100" : "opacity-0"
+                currentImage === 1 ? 'opacity-100' : 'opacity-0'
               }`}
             />
             <img
               src="bentoed.jpeg"
               alt="Image 3"
               className={`absolute rounded-[24px] aspect-1.5/1  w-full object-cover ${
-                currentImage === 2 ? "opacity-100" : "opacity-0"
+                currentImage === 2 ? 'opacity-100' : 'opacity-0'
               }`}
             />
           </motion.div>
@@ -170,10 +160,6 @@ const Work = () => {
             style={{ translateY }}
             className="hidden sm:flex absolute top-0 w-full min-h-[100vh] bg-[#222] gray-background"
           ></motion.div>
-          {/* <motion.div
-            style={{ translateY: translateYMobile }}
-            className="sm:hidden absolute top-0 w-full min-h-[100vh] bg-[#222] gray-background"
-          ></motion.div> */}
         </section>
         <MobileWorks />
 
