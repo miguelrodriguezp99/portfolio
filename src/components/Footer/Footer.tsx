@@ -42,12 +42,12 @@ export default function Footer() {
             </div>
             <div className="flex flex-col mt-3 sm:mt-0 mb-16 sm:mb-0 lg:flex-row gap-1 lg:gap-3 lg:ml-3 md:text-xl lg:text-2xl ">
               <a
-                href="https://www.instagram.com"
+                href="https://github.com/miguelrodriguezp99"
                 target="_blank"
                 rel="noreferrer"
                 className="footer-link cursor-hover2 hover:text-[#6d6d6d] transition-colors duration-300 w-fit cursor-hover2"
               >
-                Instagram
+                Github
               </a>
               <a
                 href="https://www.twitter.com"
