@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import './work.css';
 import MobileWorks from './components/MobileWorks';
 import useMedia from 'use-media';
+import WorkSvgPath from './WorkSvgPath';
 
 const Work = () => {
   const ref = useRef(null);
@@ -13,8 +14,8 @@ const Work = () => {
 
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
   const isDesktop = useMedia({ minWidth: '640px' });
-  // const is2kResolution = useMedia({ minWidth: '1440px' });
-  // const is4kResolution = useMedia({ minWidth: '2560px' });
+  const is2kResolution = useMedia({ minWidth: '1440px' });
+  const is4kResolution = useMedia({ minWidth: '2560px' });
 
   useEffect(() => {
     const handleResize = () => {
@@ -59,9 +60,50 @@ const Work = () => {
   const randomImageOpacity = useTransform(WorkTitle, [0.4, 0.45], [1, 0]);
 
   //* CARDS -- ADJUTSMENTS TO 2K AND 4K RESOLUTIONS WITH QUERIES
-  const rotateX1 = useTransform(WorkTitle, [0.2, 0.435], ['50deg', '-50deg']);
-  const rotateX2 = useTransform(WorkTitle, [0.3, 0.55], ['50deg', '-50deg']);
-  const rotateX3 = useTransform(WorkTitle, [0.4, 0.64], ['50deg', '-40deg']);
+  const degrees1 = '50deg';
+  const degrees2 = '-50deg';
+  const degrees3 = '-40deg';
+
+  let rotateX1_1 = 0.2;
+  let rotateX1_2 = 0.435;
+  let rotateX2_1 = 0.3;
+  let rotateX2_2 = 0.55;
+  let rotateX3_1 = 0.4;
+  let rotateX3_2 = 0.64;
+
+  if (is2kResolution) {
+    rotateX1_1 = 0.2;
+    rotateX1_2 = 0.435;
+    rotateX2_1 = 0.3;
+    rotateX2_2 = 0.48;
+    rotateX3_1 = 0.35;
+    rotateX3_2 = 0.55;
+  }
+
+  if (is4kResolution) {
+    rotateX1_1 = 0.2;
+    rotateX1_2 = 0.435;
+    rotateX2_1 = 0.28;
+    rotateX2_2 = 0.45;
+    rotateX3_1 = 0.3;
+    rotateX3_2 = 0.55;
+  }
+
+  const rotateX1 = useTransform(
+    WorkTitle,
+    [rotateX1_1, rotateX1_2],
+    [degrees1, degrees2]
+  );
+  const rotateX2 = useTransform(
+    WorkTitle,
+    [rotateX2_1, rotateX2_2],
+    [degrees1, degrees2]
+  );
+  const rotateX3 = useTransform(
+    WorkTitle,
+    [rotateX3_1, rotateX3_2],
+    [degrees1, degrees3]
+  );
   // const y = useTransform(WorkTitle, [0.285, 0.861], [0, -viewportHeight * 3.5]);
   const y = useTransform(WorkTitle, [0.285, 0.57], [0, -viewportHeight * 1.8]);
 
@@ -130,7 +172,7 @@ const Work = () => {
               }}
               viewBox="0 0 747.7 184.56"
             >
-              <path d="M614.5 181.68V2.88h19.2v104.4l-4.32-2.16 90-102.24h24l-72.24 82.08.96-13.68 75.6 110.4h-23.04L663.7 93.6l-30 34.08v54h-19.2ZM460.75 181.68V2.88h61.44c11.68 0 21.92 2.32 30.72 6.96 8.8 4.48 15.6 10.88 20.4 19.2 4.96 8.16 7.44 17.68 7.44 28.56 0 12.64-3.36 23.44-10.08 32.4-6.56 8.96-15.52 15.28-26.88 18.96l41.76 72.72h-22.56l-43.68-77.04 12.96 7.44h-52.32v69.6h-19.2Zm19.2-87.6h43.2c7.68 0 14.4-1.44 20.16-4.32 5.76-3.04 10.24-7.28 13.44-12.72 3.2-5.6 4.8-12.16 4.8-19.68s-1.6-14-4.8-19.44-7.68-9.6-13.44-12.48c-5.76-3.04-12.48-4.56-20.16-4.56h-43.2v73.2ZM334.28 184.56c-12.48 0-24.16-2.24-35.04-6.72-10.72-4.64-20.16-11.04-28.32-19.2-8.16-8.32-14.56-18.08-19.2-29.28-4.64-11.36-6.96-23.76-6.96-37.2s2.32-25.76 6.96-36.96c4.64-11.36 11.04-21.12 19.2-29.28 8.16-8.32 17.6-14.72 28.32-19.2C310.12 2.24 321.8 0 334.28 0s24.08 2.32 34.8 6.96c10.88 4.48 20.4 10.88 28.56 19.2 8.16 8.16 14.56 17.84 19.2 29.04 4.64 11.2 6.96 23.52 6.96 36.96s-2.32 25.84-6.96 37.2c-4.64 11.2-11.04 20.96-19.2 29.28-8.16 8.16-17.68 14.56-28.56 19.2-10.72 4.48-22.32 6.72-34.8 6.72Zm0-18c10.4 0 19.84-1.92 28.32-5.76 8.64-3.84 16.08-9.2 22.32-16.08 6.24-6.88 11.04-14.8 14.4-23.76 3.52-8.96 5.28-18.56 5.28-28.8s-1.76-19.6-5.28-28.56c-3.36-8.96-8.16-16.88-14.4-23.76-6.24-6.88-13.68-12.24-22.32-16.08-8.48-3.84-17.92-5.76-28.32-5.76s-19.92 1.92-28.56 5.76c-8.48 3.84-15.84 9.2-22.08 16.08-6.24 6.88-11.12 14.8-14.64 23.76-3.36 8.96-5.04 18.48-5.04 28.56s1.68 19.84 5.04 28.8c3.52 8.96 8.4 16.88 14.64 23.76 6.24 6.88 13.68 12.24 22.32 16.08 8.64 3.84 18.08 5.76 28.32 5.76ZM51.36 181.68 0 2.88h19.44l44.4 160.08h-4.08l45.6-160.08h20.4l45.36 160.08h-4.32L211.44 2.88h19.44l-51.36 178.8h-20.4l-45.84-160.8h4.32l-45.84 160.8h-20.4Z"></path>
+              <WorkSvgPath />
             </motion.svg>
           </div>
           <motion.div
