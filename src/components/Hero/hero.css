@@ -91,6 +91,10 @@
     width: 64vw;
     border-radius: 40px;
   }
+
+  .hero-image {
+    min-width: 100%;
+  }
 }
 @media (min-width: 1028px) {
   .hero-image-outercontainer {
