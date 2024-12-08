@@ -2,6 +2,7 @@ import { motion, useAnimation, useScroll, useTransform } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import './work.css';
 import MobileWorks from './components/MobileWorks';
+import useMedia from 'use-media';
 
 const Work = () => {
   const ref = useRef(null);
@@ -11,6 +12,9 @@ const Work = () => {
   });
 
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
+  const isDesktop = useMedia({ minWidth: '640px' });
+  // const is2kResolution = useMedia({ minWidth: '1440px' });
+  // const is4kResolution = useMedia({ minWidth: '2560px' });
 
   useEffect(() => {
     const handleResize = () => {
@@ -53,6 +57,8 @@ const Work = () => {
   });
 
   const randomImageOpacity = useTransform(WorkTitle, [0.4, 0.45], [1, 0]);
+
+  //* CARDS -- ADJUTSMENTS TO 2K AND 4K RESOLUTIONS WITH QUERIES
   const rotateX1 = useTransform(WorkTitle, [0.2, 0.435], ['50deg', '-50deg']);
   const rotateX2 = useTransform(WorkTitle, [0.3, 0.55], ['50deg', '-50deg']);
   const rotateX3 = useTransform(WorkTitle, [0.4, 0.64], ['50deg', '-40deg']);
@@ -161,85 +167,90 @@ const Work = () => {
             className="hidden sm:flex absolute top-0 w-full min-h-[100vh] bg-[#222] gray-background"
           ></motion.div>
         </section>
-        <MobileWorks />
 
-        {/* WORKS PC CONTAINER */}
-        <section className="hidden sm:flex works-container sticky top-0 text-[#f9f9f9] max-h-[100dvh]">
-          <motion.div style={{ y }} className="hidden sm:flex works-container ">
-            <a
-              href="https://miracle-ui.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="work-item-link"
+        {isDesktop ? (
+          <section className="hidden sm:flex works-container sticky top-0 text-[#f9f9f9] max-h-[100dvh]">
+            <motion.div
+              style={{ y }}
+              className="hidden sm:flex works-container "
             >
-              <div className="persp relative">
-                <motion.img
-                  ref={imgRef1}
-                  style={{
-                    rotateX: rotateX1,
-                  }}
-                  src="miracle.jpeg"
-                  alt="Miracle UI"
-                  className="work-item-image object-cover cursor-hover-project"
-                />
-              </div>
-            </a>
-            <a
-              href="https://typing-web.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="work-item-link"
-            >
-              <div className="persp">
-                <motion.img
-                  ref={imgRef2}
-                  id="keyboardimg"
-                  style={{
-                    rotateX: rotateX2,
-                  }}
-                  src="keyboard.jpeg"
-                  alt="Miracle UI"
-                  className="work-item-image object-cover cursor-hover-project"
-                />
-              </div>
-            </a>
-            <a
-              href="https://bentoed.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="work-item-link"
-            >
-              <div className="persp">
-                <motion.img
-                  ref={imgRef3}
-                  style={{
-                    rotateX: rotateX3,
-                  }}
-                  src="bentoed.jpeg"
-                  alt="Miracle UI"
-                  className="work-item-image object-cover cursor-hover-project"
-                />
-              </div>
-            </a>
-          </motion.div>
+              <a
+                href="https://miracle-ui.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="work-item-link"
+              >
+                <div className="persp relative">
+                  <motion.img
+                    ref={imgRef1}
+                    style={{
+                      rotateX: rotateX1,
+                    }}
+                    src="miracle.jpeg"
+                    alt="Miracle UI"
+                    className="work-item-image object-cover cursor-hover-project"
+                  />
+                </div>
+              </a>
+              <a
+                href="https://typing-web.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="work-item-link"
+              >
+                <div className="persp">
+                  <motion.img
+                    ref={imgRef2}
+                    id="keyboardimg"
+                    style={{
+                      rotateX: rotateX2,
+                    }}
+                    src="keyboard.jpeg"
+                    alt="Miracle UI"
+                    className="work-item-image object-cover cursor-hover-project"
+                  />
+                </div>
+              </a>
+              <a
+                href="https://bentoed.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="work-item-link"
+              >
+                <div className="persp">
+                  <motion.img
+                    ref={imgRef3}
+                    style={{
+                      rotateX: rotateX3,
+                    }}
+                    src="bentoed.jpeg"
+                    alt="Miracle UI"
+                    className="work-item-image object-cover cursor-hover-project"
+                  />
+                </div>
+              </a>
+            </motion.div>
 
-          <motion.div
-            style={{
-              translateY: translateTitles,
-            }}
-            className="hidden sm:flex work-titles-outercontainer"
-          >
-            <div className="work-titles-innercontainer">
-              <div className="work-titles-container">
-                <motion.h2 animate={controls} className="flex flex-col">
-                  <span>MIRACLE</span>
-                  <span>RTP/99</span>
-                  <span>BENTOED</span>
-                </motion.h2>
+            <motion.div
+              style={{
+                translateY: translateTitles,
+              }}
+              className="hidden sm:flex work-titles-outercontainer"
+            >
+              <div className="work-titles-innercontainer">
+                <div className="work-titles-container">
+                  <motion.h2 animate={controls} className="flex flex-col">
+                    <span>MIRACLE</span>
+                    <span>RTP/99</span>
+                    <span>BENTOED</span>
+                  </motion.h2>
+                </div>
               </div>
-            </div>
-          </motion.div>
-        </section>
+            </motion.div>
+          </section>
+        ) : (
+          <MobileWorks />
+        )}
       </div>
     </>
   );
